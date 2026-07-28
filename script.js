@@ -53,19 +53,6 @@ function initMap(){
  clusterLayer=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:42,spiderfyOnMaxZoom:true});
  map.addLayer(clusterLayer);renderSchoolMarkers();
 }
-document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));renderRegion()}
-function renderRegion(){const d=regions[language][region];document.querySelector("#regionName").textContent=d.name;document.querySelector("#pValue").textContent=d.p;document.querySelector("#bValue").textContent=d.b;document.querySelector("#pBar").style.width=`${d.p/14*100}%`;document.querySelector("#bBar").style.width=`${d.b/7*100}%`;document.querySelector("#regionInsight").textContent=d.insight;Object.entries(markers).forEach(([key,marker])=>marker.getElement()?.classList.toggle("active",key===region))}
-function selectRegion(key){region=key;document.querySelectorAll("[data-region]").forEach(x=>x.classList.toggle("active",x.dataset.region===key));renderRegion()}
-function initMap(){
-  if(!window.L)return;
-  map=L.map("surabayaMap",{scrollWheelZoom:false,zoomControl:true}).setView([-7.275,112.735],11);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"&copy; OpenStreetMap contributors"}).addTo(map);
-  L.rectangle([[-7.365,112.585],[-7.18,112.84]],{color:"#126653",weight:2,fill:false,dashArray:"6 6",interactive:false}).addTo(map);
-  Object.entries(mapPoints).forEach(([key,p])=>{
-    const icon=L.divIcon({className:`ssk-map-marker ${key===region?"active":""}`,html:`<span>${p.abbr}</span>`,iconSize:[46,46],iconAnchor:[23,23]});
-    markers[key]=L.marker(p.coords,{icon,title:regions[language][key].name}).addTo(map).on("click",()=>selectRegion(key));
-  });
-}
 document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.lang)));
 document.querySelectorAll("[data-region]").forEach(b=>b.addEventListener("click",()=>selectRegion(b.dataset.region)));
 document.querySelectorAll("#statusFilter,#regionFilter").forEach(el=>el.addEventListener("change",renderSchoolMarkers));
