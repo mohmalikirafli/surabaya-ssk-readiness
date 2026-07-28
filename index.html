@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive bilingual data story on Sekolah Siaga Kependudukan implementation in Surabaya.">
+  <title>Surabaya SSK Implementation Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="SSK Surabaya home"><span>SSK</span> SURABAYA</a>
+    <nav aria-label="Main navigation">
+      <a href="#overview" data-i18n="navOverview">Overview</a>
+      <a href="#regions" data-i18n="navRegions">Regions</a>
+      <a href="#south" data-i18n="navSouth">South Deep Dive</a>
+      <a href="#actions" data-i18n="navActions">Actions</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="active" data-lang="en">EN</button>
+      <button data-lang="id">ID</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="eyebrow" data-i18n="eyebrow">POPULATION EDUCATION · SURABAYA · 2023</div>
+      <h1 data-i18n="heroTitle">How ready are Surabaya’s schools to make population education part of everyday learning?</h1>
+      <p class="lead" data-i18n="heroLead">An interactive account of a team assessment across 166 junior and senior secondary schools—turning field observations into priorities for implementation.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#overview" data-i18n="explore">Explore the findings</a>
+        <a class="button ghost" href="#method" data-i18n="methodLink">Read methodology</a>
+      </div>
+      <div class="hero-stats" aria-label="Headline statistics">
+        <article><strong>166</strong><span data-i18n="schoolsAssessed">schools assessed</span></article>
+        <article><strong>14</strong><span data-i18n="paripurnaSchools">Paripurna schools</span></article>
+        <article><strong>7</strong><span data-i18n="basicSchools">Basic schools</span></article>
+        <article><strong>43</strong><span data-i18n="southSchools">schools in South Surabaya</span></article>
+      </div>
+    </section>
+
+    <section class="section intro" id="overview">
+      <div class="section-label">01 / <span data-i18n="overviewLabel">THE PROGRAM</span></div>
+      <div class="split">
+        <div>
+          <h2 data-i18n="overviewTitle">Readiness is more than registration.</h2>
+          <p data-i18n="overviewText">Sekolah Siaga Kependudukan (SSK) integrates population issues into lessons and student life. A school’s implementation is reflected in formal commitment, curriculum integration, learning resources, student participation, and support systems.</p>
+        </div>
+        <div class="indicator-grid">
+          <article><span>01</span><b data-i18n="ind1">Principal’s decree</b><small data-i18n="ind1s">Formal establishment</small></article>
+          <article><span>02</span><b data-i18n="ind2">Population corner</b><small data-i18n="ind2s">Accessible learning resources</small></article>
+          <article><span>03</span><b data-i18n="ind3">Lesson integration</b><small data-i18n="ind3s">Population topics in lesson plans</small></article>
+          <article><span>04</span><b data-i18n="ind4">Student activities</b><small data-i18n="ind4s">Participation beyond class</small></article>
+          <article><span>05</span><b data-i18n="ind5">PIK-R</b><small data-i18n="ind5s">Youth information & counselling</small></article>
+          <article><span>06</span><b data-i18n="ind6">Visible support</b><small data-i18n="ind6s">Signage and facilities</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="regions">
+      <div class="section-label">02 / <span data-i18n="regionLabel">REGIONAL PATTERN</span></div>
+      <div class="section-head">
+        <div><h2 data-i18n="regionTitle">Implementation is uneven across the city.</h2><p data-i18n="regionText">Select a region to compare the two documented implementation categories. North and Central were aggregated in the source report.</p></div>
+        <div class="legend"><span><i class="dot paripurna"></i>Paripurna</span><span><i class="dot basic"></i><span data-i18n="basic">Basic</span></span></div>
+      </div>
+      <div class="region-layout">
+        <div class="region-selector" role="tablist" aria-label="Surabaya regions">
+          <button role="tab" data-region="east" class="active"><b data-i18n="east">East</b><small>6 + 2</small></button>
+          <button role="tab" data-region="north"><b data-i18n="northCentral">North + Central</b><small>5 + 3</small></button>
+          <button role="tab" data-region="west"><b data-i18n="west">West</b><small>3 + 0</small></button>
+          <button role="tab" data-region="south"><b data-i18n="south">South</b><small>0 + 2</small></button>
+        </div>
+        <div class="region-card" aria-live="polite">
+          <div class="region-top"><span data-i18n="selectedRegion">SELECTED REGION</span><strong id="regionName">East Surabaya</strong></div>
+          <div class="bar-chart">
+            <div><label>Paripurna <em id="pValue">6</em></label><div class="track"><span id="pBar"></span></div></div>
+            <div><label><span data-i18n="basic">Basic</span> <em id="bValue">2</em></label><div class="track basic-track"><span id="bBar"></span></div></div>
+          </div>
+          <p id="regionInsight">East Surabaya contains the largest share of Paripurna schools: 6 of 14 citywide.</p>
+          <small class="source" data-i18n="sourceCat">Source: team assessment report; n = 21 classified schools.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="south">
+      <div class="section-label">03 / <span data-i18n="southLabel">SOUTH SURABAYA DEEP DIVE</span></div>
+      <div class="section-head">
+        <div><h2 data-i18n="southTitle">Registration is high. Full implementation is the next gap.</h2><p data-i18n="southText">The South Surabaya assessment recorded 43 schools. Most were registered and willing to continue, yet none reached Paripurna status at the time of assessment.</p></div>
+        <div class="big-number"><strong>69.8%</strong><span data-i18n="registeredWilling">registered & willing</span></div>
+      </div>
+      <div class="south-grid">
+        <div class="stacked" aria-label="South Surabaya status distribution">
+          <div class="stack-bar">
+            <span style="--w:69.77%" class="s1" title="30"></span><span style="--w:18.60%" class="s2" title="8"></span><span style="--w:4.65%" class="s3" title="2"></span><span style="--w:2.33%" class="s4" title="1"></span><span style="--w:4.65%" class="s5" title="2"></span>
+          </div>
+          <div class="status-list">
+            <article><i class="s1"></i><span data-i18n="regWilling">Registered, willing</span><b>30</b></article>
+            <article><i class="s2"></i><span data-i18n="regNot">Registered, not willing</span><b>8</b></article>
+            <article><i class="s3"></i><span data-i18n="unregWilling">Not registered, willing</span><b>2</b></article>
+            <article><i class="s4"></i><span data-i18n="unregNot">Not registered, not willing</span><b>1</b></article>
+            <article><i class="s5"></i><span data-i18n="basicStatus">Basic category</span><b>2</b></article>
+          </div>
+        </div>
+        <aside class="finding">
+          <span data-i18n="keyFinding">KEY FINDING</span>
+          <blockquote data-i18n="findingQuote">“The largest opportunity is not initial enrolment, but helping willing schools translate commitment into complete implementation.”</blockquote>
+          <p data-i18n="findingNote">Priority support should focus on lesson-plan integration, student activities, and continuity after staff changes.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section pale" id="actions">
+      <div class="section-label">04 / <span data-i18n="actionLabel">FROM GAPS TO ACTION</span></div>
+      <h2 data-i18n="actionTitle">Four implementation levers emerged from the fieldwork.</h2>
+      <div class="action-grid">
+        <article><span>01</span><h3 data-i18n="advocacy">Advocacy</h3><p data-i18n="advocacyText">Build leadership commitment among principals and decision-makers.</p></article>
+        <article><span>02</span><h3 data-i18n="socialisation">Socialisation</h3><p data-i18n="socialisationText">Align understanding of SSK goals, standards, and responsibilities.</p></article>
+        <article><span>03</span><h3 data-i18n="training">Training</h3><p data-i18n="trainingText">Equip teachers to integrate population topics into appropriate subjects.</p></article>
+        <article><span>04</span><h3 data-i18n="mentoring">Mentoring</h3><p data-i18n="mentoringText">Provide practical follow-through so early commitment becomes sustained practice.</p></article>
+      </div>
+      <div class="barrier-row">
+        <strong data-i18n="barriers">Observed barriers</strong>
+        <span data-i18n="barrier1">Teacher transfers</span><span data-i18n="barrier2">Miscommunication</span><span data-i18n="barrier3">Delayed follow-up</span><span data-i18n="barrier4">Curriculum differences</span><span data-i18n="barrier5">Competing school priorities</span>
+      </div>
+    </section>
+
+    <section class="section method" id="method">
+      <div class="section-label">05 / <span data-i18n="methodLabel">METHOD & INTERPRETATION</span></div>
+      <div class="split method-grid">
+        <div><h2 data-i18n="methodTitle">A field-based implementation assessment.</h2><p data-i18n="methodText">The team combined direct observation, interviews, document checks, recapitulation, descriptive mapping, and a chi-square analysis. The assessment covered 166 SMP and SMA/SMK-level schools in Surabaya.</p></div>
+        <div class="note">
+          <b data-i18n="analyticNote">Analytical note</b>
+          <p data-i18n="chiText">Participation in SSK socialisation was associated with possession of a principal’s SSK decree (continuity-corrected χ² = 7.378; p = 0.007; n = 166). This is an association, not evidence of causality.</p>
+          <p data-i18n="limitText">Regional counts shown here cover the 21 schools classified as Paripurna or Basic. South Surabaya’s 43-school breakdown comes from a separate detailed assessment; categories should not be summed across panels.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div><strong>Surabaya SSK Implementation Dashboard</strong><p data-i18n="footerText">A portfolio data story based on collective team fieldwork at DP3APPKB Kota Surabaya.</p></div>
+      <div><span data-i18n="contribution">Project contribution</span><p data-i18n="contributionText">Mohammad Maliki Rafli · team assessment, field observation, interviews, data recapitulation, and analysis.</p></div>
+      <a href="https://github.com/mohmalikirafli/surabaya-ssk-readiness" target="_blank" rel="noreferrer">View source ↗</a>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
