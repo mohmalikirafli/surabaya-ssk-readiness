@@ -19,3 +19,13 @@
 .map-panel .region-selector button.active{background:#21473e;box-shadow:inset 3px 0 var(--lime)}
 .region-card{position:sticky;top:96px}
 @media(max-width:850px){.region-card{position:static}#surabayaMap{height:360px}}
+
+/* School-level map */
+.map-toolbar{display:grid;grid-template-columns:auto 1fr 1fr;gap:.7rem;align-items:end;margin:.8rem 0}
+.map-counter{display:flex;flex-direction:column;min-width:100px}.map-counter strong{font:800 1.65rem Manrope;color:var(--lime);line-height:1}.map-counter span{font-size:.72rem;color:#aebbb7}
+.map-toolbar label{display:grid;gap:.3rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;color:#aebbb7;text-transform:uppercase}
+.map-toolbar select{width:100%;background:#173a32;color:white;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:.65rem .7rem;font:600 .8rem "DM Sans";outline:none}
+.school-pin-wrap{background:transparent;border:0}.school-pin{display:block;position:relative;width:27px;height:27px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 4px 12px rgba(11,33,28,.35)}.school-pin.paripurna{background:var(--green)}.school-pin.basic{background:var(--orange)}.school-pin i{position:absolute;width:7px;height:7px;background:white;border-radius:50%;left:7px;top:7px}
+.marker-cluster div{font:800 .78rem Manrope;background:var(--lime);color:var(--ink)}.marker-cluster{background:rgba(185,217,106,.38)}
+.school-popup{min-width:210px}.school-popup strong{display:block;font:800 1rem Manrope;line-height:1.25;margin:.55rem 0}.popup-status{display:inline-block;padding:.22rem .48rem;border-radius:99px;color:white;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.popup-status.paripurna{background:var(--green)}.popup-status.basic{background:var(--orange)}.school-popup dl{display:grid;grid-template-columns:55px 1fr;gap:.25rem .55rem;margin:.7rem 0 0;font-size:.73rem}.school-popup dt{color:#71807b}.school-popup dd{margin:0}
+@media(max-width:520px){.map-toolbar{grid-template-columns:1fr 1fr}.map-counter{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:.45rem}#surabayaMap{height:430px}}
