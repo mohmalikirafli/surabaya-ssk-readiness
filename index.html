@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -68,11 +69,15 @@
         <div class="legend"><span><i class="dot paripurna"></i>Paripurna</span><span><i class="dot basic"></i><span data-i18n="basic">Basic</span></span></div>
       </div>
       <div class="region-layout">
-        <div class="region-selector" role="tablist" aria-label="Surabaya regions">
-          <button role="tab" data-region="east" class="active"><b data-i18n="east">East</b><small>6 + 2</small></button>
-          <button role="tab" data-region="north"><b data-i18n="northCentral">North + Central</b><small>5 + 3</small></button>
-          <button role="tab" data-region="west"><b data-i18n="west">West</b><small>3 + 0</small></button>
-          <button role="tab" data-region="south"><b data-i18n="south">South</b><small>0 + 2</small></button>
+        <div class="map-panel">
+          <div id="surabayaMap" aria-label="Interactive map of Surabaya implementation regions"></div>
+          <p class="map-note" data-i18n="mapNote">Markers show approximate regional centres, not individual school locations. Select a marker or region below.</p>
+          <div class="region-selector" role="tablist" aria-label="Surabaya regions">
+            <button role="tab" data-region="east" class="active"><b data-i18n="east">East</b><small>6 + 2</small></button>
+            <button role="tab" data-region="north"><b data-i18n="northCentral">North + Central</b><small>5 + 3</small></button>
+            <button role="tab" data-region="west"><b data-i18n="west">West</b><small>3 + 0</small></button>
+            <button role="tab" data-region="south"><b data-i18n="south">South</b><small>0 + 2</small></button>
+          </div>
         </div>
         <div class="region-card" aria-live="polite">
           <div class="region-top"><span data-i18n="selectedRegion">SELECTED REGION</span><strong id="regionName">East Surabaya</strong></div>
@@ -146,6 +151,7 @@
       <a href="https://github.com/mohmalikirafli/surabaya-ssk-readiness" target="_blank" rel="noreferrer">View source ↗</a>
     </footer>
   </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="script.js"></script>
 </body>
 </html>
