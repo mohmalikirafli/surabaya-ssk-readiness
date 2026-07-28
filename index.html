@@ -8,10 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?v=1.9.4" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
-  <link rel="stylesheet" href="styles.css?v=schools-20260728-1">
+  <link rel="stylesheet" href="styles.css?v=portfolio-20260729-1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -75,10 +75,13 @@
           <div id="surabayaMap" aria-label="Interactive map of Surabaya implementation regions"></div>
           <div class="map-toolbar" aria-label="School map filters">
             <div class="map-counter"><strong id="visibleSchoolCount">21</strong><span data-i18n="mappedSchools">mapped schools</span></div>
+            <label class="school-search"><span data-i18n="searchSchool">Search school</span><input id="schoolSearch" type="search" list="schoolNames" data-i18n-placeholder="searchPlaceholder" placeholder="Type a school name…" autocomplete="off"><datalist id="schoolNames"></datalist></label>
             <label><span data-i18n="filterStatus">Status</span><select id="statusFilter"><option value="all" data-i18n="allStatus">All statuses</option><option value="Paripurna">Paripurna</option><option value="Basic" data-i18n="basic">Basic</option></select></label>
             <label><span data-i18n="filterRegion">Region</span><select id="regionFilter"><option value="all" data-i18n="allRegions">All regions</option><option value="east" data-i18n="east">East</option><option value="north" data-i18n="northCentral">North + Central</option><option value="west" data-i18n="west">West</option><option value="south" data-i18n="south">South</option></select></label>
+            <button id="resetMap" class="map-reset" type="button" data-i18n="resetMap">Reset</button>
           </div>
-          <p class="map-note" data-i18n="mapNote">School points are based on addresses documented in the team report. Select a point for details.</p>
+          <div class="map-summary" aria-live="polite"><span><b id="summaryParipurna">14</b> Paripurna</span><span><b id="summaryBasic">7</b> <i data-i18n="basic">Basic</i></span><span><b id="summaryShare">100%</b> <i data-i18n="ofMapped">of mapped schools</i></span></div>
+          <p class="map-note" data-i18n="mapNote">School points use geocoded report addresses. Shaded analysis zones are indicative, not official administrative boundaries.</p>
           <div class="region-selector" role="tablist" aria-label="Surabaya regions">
             <button role="tab" data-region="east" class="active"><b data-i18n="east">East</b><small>6 + 2</small></button>
             <button role="tab" data-region="north"><b data-i18n="northCentral">North + Central</b><small>5 + 3</small></button>
@@ -94,6 +97,12 @@
           </div>
           <p id="regionInsight">East Surabaya contains the largest share of Paripurna schools: 6 of 14 citywide.</p>
           <small class="source" data-i18n="sourceCat">Source: team assessment report; n = 21 classified schools.</small>
+          <div class="school-detail" id="schoolDetail">
+            <span data-i18n="schoolProfile">SCHOOL PROFILE</span>
+            <h3 id="detailName" data-i18n="selectSchool">Select a school on the map</h3>
+            <dl><dt data-i18n="category">Category</dt><dd id="detailStatus">—</dd><dt data-i18n="regionField">Region</dt><dd id="detailRegion">—</dd><dt data-i18n="address">Address</dt><dd id="detailAddress">—</dd><dt data-i18n="locationQuality">Location quality</dt><dd id="detailQuality">—</dd></dl>
+          </div>
+          <button class="download-button" id="downloadCsv" type="button" data-i18n="downloadCsv">Download visible data (.csv)</button>
         </div>
       </div>
     </section>
@@ -158,8 +167,8 @@
       <a href="https://github.com/mohmalikirafli/surabaya-ssk-readiness" target="_blank" rel="noreferrer">View source ↗</a>
     </footer>
   </main>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js?v=1.9.4" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-  <script src="script.js?v=mapfix-20260728-2"></script>
+  <script src="script.js?v=portfolio-20260729-1"></script>
 </body>
 </html>
