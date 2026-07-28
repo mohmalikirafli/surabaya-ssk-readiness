@@ -37,7 +37,11 @@ The citywide regional panel describes 21 schools classified as Paripurna or Basi
 ## Features
 
 - Full English/Indonesian language toggle
-- Interactive OpenStreetMap-based regional map with linked markers
+- Interactive OpenStreetMap with 21 school-level markers and clustering
+- School search, regional/status filters, dynamic summaries, and reset control
+- Click-through school profile with address and location-quality disclosure
+- Indicative analysis zones (explicitly not presented as official boundaries)
+- Downloadable CSV that follows the active filters
 - Responsive layout
 - Interactive regional comparison
 - Accessible semantic HTML and reduced-motion support
@@ -50,6 +54,15 @@ The citywide regional panel describes 21 schools classified as Paripurna or Basi
 ## Tech stack
 
 HTML, CSS, and vanilla JavaScript. Hosted with GitHub Pages.
+
+## Data quality and responsible use
+
+- The 166-school figure describes the full team assessment.
+- The map contains the 21 schools documented as Paripurna or Basic with usable names and addresses.
+- Coordinates are address-geocoded estimates for portfolio visualization, not field-recorded GPS measurements.
+- Regional analysis zones are visual guides only and are not official administrative boundaries.
+- North and Central Surabaya remain aggregated where the source report presents them together.
+- The 43-school South Surabaya panel is a separate detailed assessment and must not be added to the 21 mapped schools.
 
 ## License
 
