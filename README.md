@@ -37,6 +37,7 @@ The citywide regional panel describes 21 schools classified as Paripurna or Basi
 ## Features
 
 - Full English/Indonesian language toggle
+- Interactive OpenStreetMap-based regional map with linked markers
 - Responsive layout
 - Interactive regional comparison
 - Accessible semantic HTML and reduced-motion support
